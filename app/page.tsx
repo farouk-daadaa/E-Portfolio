@@ -1,22 +1,23 @@
-import { Metadata } from 'next'
+import { Header } from '@/components/header'
+import { Hero } from '@/components/hero'
+import { About } from '@/components/about'
+import { Skills } from '@/components/skills'
+import { Projects } from '@/components/projects'
+import { Contact } from '@/components/contact'
+import { Footer } from '@/components/footer'
 
-export const metadata: Metadata = {
-  title: 'Farouk Daadaa - Resume',
-  description: 'Resume of Farouk Daadaa - Computer Engineering Student',
-}
-
-export default function ResumePage() {
+export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <object
-        data="/resume.pdf"
-        type="application/pdf"
-        width="100%"
-        height="100%"
-        className="absolute inset-0"
-      >
-        <p>It appears you don't have a PDF plugin for this browser. You can <a href="/resume.pdf">click here to download the PDF file.</a></p>
-      </object>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   )
 }

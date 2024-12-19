@@ -1,16 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Farouk Daadaa - Portfolio',
-  description: 'Computer Engineering Student | Web, Mobile, and Game Developer',
+  description: 'Computer Engineering Student specializing in Web, Mobile, and Game Development',
 }
 
 export default function RootLayout({
@@ -19,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} font-sans bg-gray-900 text-gray-100`}>
-        {children}
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
